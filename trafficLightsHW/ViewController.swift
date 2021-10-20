@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var textButton: UIButton!
     
+   
     private var colors = Colors.red
     
     override func viewDidLoad() {
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
         redLight.alpha = 0.3
         yellowLight.alpha = 0.3
         greenLight.alpha = 0.3
+        
+        view.backgroundColor = .gray
     }
     
     override func viewWillLayoutSubviews() {
