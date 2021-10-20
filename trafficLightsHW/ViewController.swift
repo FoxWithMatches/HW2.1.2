@@ -14,7 +14,7 @@ enum Colors {
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
@@ -23,25 +23,19 @@ class ViewController: UIViewController {
     
     private var colors = Colors.red
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         redLight.alpha = 0.3
-        redLight.layer.masksToBounds = true
-        redLight.layer.cornerRadius = redLight.frame.height / 2
-        
-        
         yellowLight.alpha = 0.3
-        yellowLight.layer.masksToBounds = true
-        yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
-        
         greenLight.alpha = 0.3
-        greenLight.layer.masksToBounds = true
-        greenLight.layer.cornerRadius = greenLight.frame.height / 2
     }
-
-   
+    
+    override func viewWillLayoutSubviews() {
+        redLight.layer.cornerRadius = redLight.frame.height / 2
+        yellowLight.layer.cornerRadius = redLight.frame.height / 2
+        greenLight.layer.cornerRadius = redLight.frame.height / 2
+    }
+    
     @IBAction func toggleButton() {
         textButton.setTitle("Next", for: .normal)
         
@@ -61,6 +55,6 @@ class ViewController: UIViewController {
         }
     }
     
-   
+    
 }
 
